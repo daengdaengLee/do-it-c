@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int GetMyString(char buffer[ ], int limit) {
-  int i;
+  int c, i;
   for (i = 0; i < limit; i++) {
     buffer[i] = getchar();
     if (buffer[i] == '\n') {
@@ -10,7 +10,7 @@ int GetMyString(char buffer[ ], int limit) {
     }
   }
   buffer[i] = 0;
-  rewind(stdin);
+  while((c = getchar()) != '\n' && c != EOF) {}
   return 0;
 }
 
